@@ -1,0 +1,57 @@
+#a = [1.0, 2.0, 3.0]
+#b = [4.0, 5.0, 6.0]
+#sums = [d[0] + d[1] for d in list(zip(a,b))]
+#print(sums)
+a = 0
+b = 0
+def fill_a():
+  global a
+  a=3
+  print("filled A:")
+  print(a,b)
+  #--
+def fill_b():
+  global b
+  b=5
+  print("filled B:")
+  print(a,b)
+  #--
+def em_a():
+  global a
+  a=0
+  print("Emtied A:")
+  print(a,b)
+  #--
+def em_b():
+  global b
+  b=0
+  print("Emtied B:")
+  print(a,b)
+  #--
+def a_b():
+  global a,b
+  b_space=5-b
+  b += a
+  if(b>5):
+    b = 5
+  if(b_space>=3):
+    a=0
+  else:
+    a= a-b_space
+  print("Transfered A to B:")
+  print(a,b)
+  #--
+def b_a():
+  global a,b
+  a_space=3-a
+  a += b
+  if(a>3):
+    a = 3
+  b=b-a_space
+  print("Transfered B to A:")
+  print(a,b)
+  #---
+
+fill_a()
+b_a()
+a_b()

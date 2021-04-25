@@ -1,0 +1,61 @@
+cap_a=3
+cap_b=5
+a = 0
+b = 0
+def fill_a():
+  global a,cap_a
+  a=cap_a
+  print("filled A:")
+  print(a,b)
+  #--
+def fill_b():
+  global b,cap_b
+  b=cap_b
+  print("filled B:")
+  print(a,b)
+  #--
+def em_a():
+  global a
+  a=0
+  print("Emtied A:")
+  print(a,b)
+  #--
+def em_b():
+  global b
+  b=0
+  print("Emtied B:")
+  print(a,b)
+  #--
+def a_b():
+  global a,b,cap_a,cap_b
+  b_space=cap_b-b
+  b += a
+  if(b>cap_b):
+    b = cap_b
+  if(b_space>=cap_a):
+    a=0
+  else:
+    a= a-b_space
+  print("Transfered A to B:")
+  print(a,b)
+  #--
+def b_a():
+  global a,b,cap_a
+  a_space=cap_a-a
+  a += b
+  if(a>cap_a):
+    a = cap_a
+  if(a_space>=b):
+    b=0
+  else:
+    b=b-a_space
+  print("Transfered B to A:")
+  print(a,b)
+  #---
+
+fill_b()
+b_a()
+em_a()
+b_a()
+fill_b()
+b_a()
